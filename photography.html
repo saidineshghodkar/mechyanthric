@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography & Video Editing · MEC WORKS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --gold: #C8993E; --dark: #0A0A0A; --glass: rgba(255, 255, 255, 0.03); }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--dark); color: #E2E8F0; overflow-x: hidden; }
+        .text-gold { color: var(--gold); } .bg-gold { background-color: var(--gold); } .border-gold { border-color: var(--gold); }
+        .glass { background: var(--glass); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .hover-gold:hover { color: var(--gold); }
+        .fade-up { animation: fadeUp 0.8s ease-out; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .service-card:hover { transform: translateY(-5px); border-color: var(--gold); box-shadow: 0 10px 30px -10px rgba(200,153,62,0.3); }
+    </style>
+</head>
+<body class="bg-[#0A0A0A]">
+
+<!-- Navigation (same style as main site) -->
+<nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-6 glass">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <a href="/" class="flex items-center space-x-3">
+            <div class="w-10 h-10 bg-gold rounded flex items-center justify-center shadow-[0_0_15px_rgba(200,153,62,0.4)]">
+                <svg class="w-6 h-6 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                </svg>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-xl font-extrabold tracking-tighter text-white">MEC<span class="text-gold">WORKS</span></span>
+                <span class="text-[0.6rem] uppercase tracking-[0.3em] text-gray-500 font-bold">Multi Engineering</span>
+            </div>
+        </a>
+        <div class="hidden md:flex space-x-10">
+            <a href="/" class="text-xs uppercase tracking-widest font-bold hover:text-gold">Home</a>
+            <a href="#overview" class="text-xs uppercase tracking-widest font-bold hover:text-gold">Overview</a>
+            <a href="#portfolio" class="text-xs uppercase tracking-widest font-bold hover:text-gold">Portfolio</a>
+            <a href="#contact" class="text-xs uppercase tracking-widest font-bold hover:text-gold">Contact</a>
+        </div>
+        <div class="flex items-center space-x-4">
+            <a href="/register/client" class="border border-gold text-gold px-4 py-2 rounded-full text-xs font-bold uppercase hover:bg-gold hover:text-black">Client</a>
+            <a href="/register/freelancer" class="bg-gold text-black px-4 py-2 rounded-full text-xs font-bold uppercase hover:bg-white">Freelancer</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="relative pt-32 pb-20 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 relative z-10 fade-up">
+        <div class="max-w-4xl">
+            <span class="text-gold text-sm font-bold uppercase tracking-[0.3em]">CREATIVE CRAFT</span>
+            <h1 class="text-5xl md:text-7xl font-black mt-6 leading-[1.1]">Photography &<br><span class="text-gold">Video Editing</span></h1>
+            <p class="text-xl text-gray-400 mt-6 max-w-2xl">Transform moments into masterpieces. Professional photography, cinematic video editing, and post-production services tailored for brands, events, and digital content.</p>
+        </div>
+    </div>
+    <!-- abstract background -->
+    <div class="absolute top-20 right-0 opacity-10 pointer-events-none">
+        <svg width="400" height="400" viewBox="0 0 100 100" fill="none" stroke="white">
+            <circle cx="50" cy="50" r="40" stroke-width="0.5"/>
+            <circle cx="50" cy="50" r="30" stroke-width="0.5"/>
+            <circle cx="50" cy="50" r="20" stroke-width="0.5"/>
+        </svg>
+    </div>
+</section>
+
+<!-- Overview Section -->
+<section id="overview" class="py-20 bg-[#0d0d0d]">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="fade-up">
+                <h2 class="text-gold text-sm font-bold uppercase tracking-[0.4em] mb-4">Our Expertise</h2>
+                <h3 class="text-4xl font-black mb-6">Visual Storytelling <span class="text-gray-500">that Captivates</span></h3>
+                <p class="text-gray-400 text-lg leading-relaxed">From high-end commercial shoots to dynamic event coverage, our photographers and video editors bring ideas to life. We handle every stage: pre‑production, filming, editing, color grading, sound design, and final delivery in any format.</p>
+                <div class="grid grid-cols-2 gap-4 mt-8">
+                    <div class="glass p-5 rounded-2xl">
+                        <span class="text-3xl font-black text-gold">120+</span>
+                        <p class="text-xs uppercase tracking-wider mt-1">Projects Completed</p>
+                    </div>
+                    <div class="glass p-5 rounded-2xl">
+                        <span class="text-3xl font-black text-gold">15</span>
+                        <p class="text-xs uppercase tracking-wider mt-1">Expert Creators</p>
+                    </div>
+                </div>
+            </div>
+            <div class="glass p-3 rounded-3xl fade-up" style="animation-delay:0.2s">
+                <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=600" alt="Photography equipment" class="rounded-2xl w-full h-auto">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio / Services Grid -->
+<section id="portfolio" class="py-20 bg-black/50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-gold text-sm font-bold uppercase tracking-[0.4em] mb-4">Our Work</h2>
+            <h3 class="text-4xl md:text-5xl font-black">Featured <span class="text-gray-500">Portfolio</span></h3>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+            <!-- card 1 -->
+            <div class="glass p-4 rounded-3xl service-card fade-up">
+                <img src="https://images.unsplash.com/photo-1505685296765-3a2736de412f?w=400" class="rounded-2xl w-full h-48 object-cover">
+                <h4 class="text-xl font-bold mt-4">Commercial Photography</h4>
+                <p class="text-sm text-gray-400 mt-1">Product campaigns, lookbooks, and brand storytelling.</p>
+            </div>
+            <!-- card 2 -->
+            <div class="glass p-4 rounded-3xl service-card fade-up" style="animation-delay:0.1s">
+                <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=400" class="rounded-2xl w-full h-48 object-cover">
+                <h4 class="text-xl font-bold mt-4">Event Videography</h4>
+                <p class="text-sm text-gray-400 mt-1">Weddings, conferences, live performances – cinematic coverage.</p>
+            </div>
+            <!-- card 3 -->
+            <div class="glass p-4 rounded-3xl service-card fade-up" style="animation-delay:0.2s">
+                <img src="https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=400" class="rounded-2xl w-full h-48 object-cover">
+                <h4 class="text-xl font-bold mt-4">Post‑Production</h4>
+                <p class="text-sm text-gray-400 mt-1">Color grading, VFX, sound mixing, and motion graphics.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="py-20 bg-[#0d0d0d]">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-gold text-sm font-bold uppercase tracking-[0.4em] mb-4">Why Us</h2>
+            <h3 class="text-4xl md:text-5xl font-black">The <span class="text-gray-500">MEC</span> Advantage</h3>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="glass p-6 rounded-3xl text-center">
+                <div class="w-14 h-14 bg-gold/20 rounded-2xl flex items-center justify-center mx-auto mb-4 text-gold text-2xl">🎥</div>
+                <h4 class="text-xl font-bold">Cinematic Quality</h4>
+                <p class="text-gray-400 text-sm mt-2">Industry‑standard cameras, drones, and editing suites.</p>
+            </div>
+            <div class="glass p-6 rounded-3xl text-center">
+                <div class="w-14 h-14 bg-gold/20 rounded-2xl flex items-center justify-center mx-auto mb-4 text-gold text-2xl">⚡</div>
+                <h4 class="text-xl font-bold">Fast Turnaround</h4>
+                <p class="text-gray-400 text-sm mt-2">Express editing options without compromising quality.</p>
+            </div>
+            <div class="glass p-6 rounded-3xl text-center">
+                <div class="w-14 h-14 bg-gold/20 rounded-2xl flex items-center justify-center mx-auto mb-4 text-gold text-2xl">🤝</div>
+                <h4 class="text-xl font-bold">Collaborative</h4>
+                <p class="text-gray-400 text-sm mt-2">We work closely with you to match your creative vision.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section (similar to main page) -->
+<section id="contact" class="py-20 bg-black/50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-gold text-sm font-bold uppercase tracking-[0.4em] mb-4">Let's create</h2>
+            <h3 class="text-4xl md:text-5xl font-black">Get in <span class="text-gray-500">Touch</span></h3>
+        </div>
+        <div class="grid md:grid-cols-2 gap-12">
+            <div class="glass p-8 rounded-3xl fade-up">
+                <h4 class="text-2xl font-bold mb-6">Tell us about your project</h4>
+                <form id="contactForm">
+                    <input type="text" name="name" placeholder="Your Name" required class="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 mb-4">
+                    <input type="email" name="email" placeholder="Email Address" required class="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 mb-4">
+                    <textarea name="message" rows="4" placeholder="Describe your photography/video needs..." required class="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 mb-4"></textarea>
+                    <button type="submit" class="bg-gold text-black font-bold py-4 px-8 rounded-xl">Send Inquiry</button>
+                </form>
+                <div id="contactSuccess" class="hidden mt-4 text-green-500 text-sm">Message sent successfully!</div>
+            </div>
+            <div class="space-y-6 fade-up" style="animation-delay:0.2s">
+                <div class="flex items-center space-x-4"><span class="text-gold text-xl">📧</span><span>contact@mecworks.in</span></div>
+                <div class="flex items-center space-x-4"><span class="text-gold text-xl">📞</span><span>+91 9347051097</span></div>
+                <div class="flex items-center space-x-4"><span class="text-gold text-xl">📍</span><span>Dhone,AP, India</span></div>
+                <div class="mt-6 rounded-2xl overflow-hidden h-64">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.977289580237!2d77.594562314822!3d12.971598790844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1673e7d0672f%3A0xc62d6a7c2cfd3c6!2sBangalore%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1645432167890!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer (simplified, with back link) -->
+<footer class="py-10 border-t border-white/5 bg-[#0d0d0d]">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+        <p>© 2026 MEC WORKS — Photography & Video Editing. All rights reserved.</p>
+        <div class="flex space-x-6 mt-4 md:mt-0">
+            <a href="/" class="hover:text-gold">Back to Home</a>
+            <a href="#" class="hover:text-gold">Privacy</a>
+        </div>
+    </div>
+</footer>
+
+<!-- JavaScript for contact form submission (same as main page) -->
+<script>
+    document.getElementById('contactForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const formData = new FormData(form);
+        const res = await fetch('/api/contact', {
+            method: 'POST',
+            body: formData
+        });
+        const data = await res.json();
+        const successDiv = document.getElementById('contactSuccess');
+        if (data.status === 'success') {
+            form.reset();
+            successDiv.classList.remove('hidden');
+            setTimeout(() => successDiv.classList.add('hidden'), 5000);
+        } else {
+            alert('Error sending message. Please try again.');
+        }
+    });
+
+    // Navbar scroll effect (copy from main)
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            nav.classList.add('shadow-2xl', 'py-4');
+            nav.classList.remove('py-6');
+        } else {
+            nav.classList.remove('shadow-2xl', 'py-4');
+            nav.classList.add('py-6');
+        }
+    });
+</script>
+
+</body>
+</html>

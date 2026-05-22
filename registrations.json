@@ -1,0 +1,32 @@
+{
+  "clients": [
+    {
+      "id": "legacy-request-001",
+      "contact_name": "Sai Dinesh Ghodkar",
+      "company": "MEC Works",
+      "email": "saidineshghodkar@gmail.com",
+      "phone": "09347051097",
+      "service": "Web Development",
+      "budget": "10000000",
+      "requirements": "Good SEO and a 10-page company website.",
+      "timeline": "45 days",
+      "submitted_at": "2026-02-26 20:53:00"
+    }
+  ],
+  "project_requests": [
+    {
+      "id": "legacy-request-001",
+      "contact_name": "Sai Dinesh Ghodkar",
+      "company": "MEC Works",
+      "email": "saidineshghodkar@gmail.com",
+      "phone": "09347051097",
+      "service": "Web Development",
+      "budget": "10000000",
+      "requirements": "Good SEO and a 10-page company website.",
+      "timeline": "45 days",
+      "submitted_at": "2026-02-26 20:53:00"
+    }
+  ],
+  "freelancers": [],
+  "applications": []
+}

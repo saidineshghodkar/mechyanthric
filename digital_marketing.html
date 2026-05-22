@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promotions & Digital Marketing · MEC WORKS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --gold: #C8993E; --dark: #0A0A0A; --glass: rgba(255, 255, 255, 0.03); }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--dark); color: #E2E8F0; overflow-x: hidden; }
+        .text-gold { color: var(--gold); } .bg-gold { background-color: var(--gold); } .border-gold { border-color: var(--gold); }
+        .glass { background: var(--glass); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .service-card:hover { transform: translateY(-10px); border-color: var(--gold); box-shadow: 0 10px 30px -10px rgba(200, 153, 62, 0.3); }
+        .fade-up { animation: fadeUp 0.8s ease-out; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="bg-[#0A0A0A]">
+
+    <!-- Navigation (same as main site) -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-6 glass">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="/" class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-gold rounded flex items-center justify-center shadow-[0_0_15px_rgba(200,153,62,0.4)]">
+                    <svg class="w-6 h-6 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                    </svg>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-extrabold tracking-tighter text-white">MEC<span class="text-gold">WORKS</span></span>
+                    <span class="text-[0.6rem] uppercase tracking-[0.3em] text-gray-500 font-bold">Multi Engineering</span>
+                </div>
+            </a>
+            <div class="hidden md:flex space-x-10">
+                <a href="/#home" class="text-xs uppercase tracking-widest font-bold hover:text-gold">Home</a>
+                <a href="/#about" class="text-xs uppercase tracking-widest font-bold hover:text-gold">About</a>
+                <a href="/#services" class="text-xs uppercase tracking-widest font-bold hover:text-gold">Crafts</a>
+                <a href="/#non-engineering" class="text-xs uppercase tracking-widest font-bold hover:text-gold">Non-ENG</a>
+                <a href="/#news" class="text-xs uppercase tracking-widest font-bold hover:text-gold">News</a>
+                <a href="/#contact" class="text-xs uppercase tracking-widest font-bold hover:text-gold">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="/register/client" class="border border-gold text-gold px-4 py-2 rounded-full text-xs font-bold uppercase hover:bg-gold hover:text-black">Client</a>
+                <a href="/register/freelancer" class="bg-gold text-black px-4 py-2 rounded-full text-xs font-bold uppercase hover:bg-white">Freelancer</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer for fixed nav -->
+    <div class="h-32"></div>
+
+    <!-- Main Content -->
+    <section class="max-w-7xl mx-auto px-6 py-16 fade-up">
+        <div class="text-center mb-16">
+            <span class="text-gold text-sm font-bold uppercase tracking-[0.4em]">CREATIVE HUB</span>
+            <h1 class="text-5xl md:text-6xl font-black mt-6 leading-tight">Promotions & <span class="text-gray-500">Digital Marketing</span></h1>
+            <p class="text-xl text-gray-400 mt-6 max-w-3xl mx-auto">Amplify your brand with data‑driven campaigns, creative content, and strategic social media management.</p>
+        </div>
+
+        <!-- What We Offer (Grid) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+            <div class="glass p-8 rounded-3xl service-card">
+                <div class="w-14 h-14 bg-pink-500/10 text-pink-400 rounded-2xl flex items-center justify-center mb-6 text-3xl">📱</div>
+                <h3 class="text-2xl font-bold mb-4">Social Media Management</h3>
+                <ul class="text-gray-400 space-y-2 text-sm">
+                    <li>• Instagram & Facebook strategy</li>
+                    <li>• TikTok & Reels creation</li>
+                    <li>• Community engagement</li>
+                    <li>• Analytics & reporting</li>
+                </ul>
+            </div>
+            <div class="glass p-8 rounded-3xl service-card">
+                <div class="w-14 h-14 bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center mb-6 text-3xl">📊</div>
+                <h3 class="text-2xl font-bold mb-4">Paid Advertising</h3>
+                <ul class="text-gray-400 space-y-2 text-sm">
+                    <li>• Google Ads (Search & Display)</li>
+                    <li>• Facebook & Instagram Ads</li>
+                    <li>• LinkedIn & Twitter campaigns</li>
+                    <li>• ROI tracking & optimisation</li>
+                </ul>
+            </div>
+            <div class="glass p-8 rounded-3xl service-card">
+                <div class="w-14 h-14 bg-yellow-500/10 text-yellow-400 rounded-2xl flex items-center justify-center mb-6 text-3xl">✍️</div>
+                <h3 class="text-2xl font-bold mb-4">Content Creation</h3>
+                <ul class="text-gray-400 space-y-2 text-sm">
+                    <li>• Copywriting & blog posts</li>
+                    <li>• Video scripts & storyboards</li>
+                    <li>• Graphic design for social</li>
+                    <li>• Brand voice development</li>
+                </ul>
+            </div>
+            <div class="glass p-8 rounded-3xl service-card">
+                <div class="w-14 h-14 bg-purple-500/10 text-purple-400 rounded-2xl flex items-center justify-center mb-6 text-3xl">📈</div>
+                <h3 class="text-2xl font-bold mb-4">SEO & Growth</h3>
+                <ul class="text-gray-400 space-y-2 text-sm">
+                    <li>• On‑page & technical SEO</li>
+                    <li>• Keyword research</li>
+                    <li>• Link building</li>
+                    <li>• Local SEO for businesses</li>
+                </ul>
+            </div>
+            <div class="glass p-8 rounded-3xl service-card">
+                <div class="w-14 h-14 bg-green-500/10 text-green-400 rounded-2xl flex items-center justify-center mb-6 text-3xl">📧</div>
+                <h3 class="text-2xl font-bold mb-4">Email Marketing</h3>
+                <ul class="text-gray-400 space-y-2 text-sm">
+                    <li>• Newsletter design</li>
+                    <li>• Automation workflows</li>
+                    <li>• A/B testing</li>
+                    <li>• Performance analytics</li>
+                </ul>
+            </div>
+            <div class="glass p-8 rounded-3xl service-card">
+                <div class="w-14 h-14 bg-red-500/10 text-red-400 rounded-2xl flex items-center justify-center mb-6 text-3xl">🎯</div>
+                <h3 class="text-2xl font-bold mb-4">Influencer Marketing</h3>
+                <ul class="text-gray-400 space-y-2 text-sm">
+                    <li>• Influencer outreach</li>
+                    <li>• Campaign management</li>
+                    <li>• Content collaboration</li>
+                    <li>• Performance tracking</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Why Choose Us -->
+        <div class="glass p-12 rounded-3xl mb-20">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-black mb-6">Why MEC WORKS for <span class="text-gold">Digital Marketing?</span></h2>
+                    <p class="text-gray-400 leading-relaxed">We combine engineering precision with creative flair. Every campaign is built on data, tested, and optimised for your unique goals. From startups to established enterprises, our marketing specialists deliver measurable results.</p>
+                    <ul class="mt-6 space-y-3">
+                        <li class="flex items-start space-x-3"><span class="text-gold text-xl">✓</span><span class="text-gray-300">Custom strategies tailored to your industry</span></li>
+                        <li class="flex items-start space-x-3"><span class="text-gold text-xl">✓</span><span class="text-gray-300">Transparent reporting & regular updates</span></li>
+                        <li class="flex items-start space-x-3"><span class="text-gold text-xl">✓</span><span class="text-gray-300">Dedicated account manager</span></li>
+                        <li class="flex items-start space-x-3"><span class="text-gold text-xl">✓</span><span class="text-gray-300">Flexible packages – hourly, project‑based, or retainer</span></li>
+                    </ul>
+                </div>
+                <div class="flex justify-center">
+                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600" alt="Marketing team" class="rounded-3xl shadow-2xl border-4 border-gold/20">
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action / Contact Form -->
+        <div class="max-w-3xl mx-auto glass p-10 rounded-3xl text-center">
+            <h3 class="text-3xl font-bold mb-4">Ready to grow your brand?</h3>
+            <p class="text-gray-400 mb-8">Tell us about your goals and we’ll propose a custom marketing plan.</p>
+            <form id="contactForm" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-4">
+                    <input type="text" name="name" placeholder="Your Name *" required class="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4">
+                    <input type="email" name="email" placeholder="Email *" required class="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4">
+                </div>
+                <textarea name="message" placeholder="Tell us about your project or marketing needs *" rows="4" required class="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4"></textarea>
+                <button type="submit" class="bg-gold text-black font-bold py-4 px-10 rounded-xl hover:bg-gold/90 transition">Get in touch</button>
+            </form>
+            <div id="formSuccess" class="hidden mt-4 text-green-500 text-sm">Message sent! We'll get back to you shortly.</div>
+        </div>
+    </section>
+
+    <!-- Footer (simplified, consistent with main) -->
+    <footer class="py-16 border-t border-white/5 bg-[#0d0d0d]">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <div class="flex items-center space-x-2 mb-4">
+                    <div class="w-8 h-8 bg-gold rounded flex items-center justify-center">
+                        <svg class="w-5 h-5 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                    </div>
+                    <span class="text-lg font-black tracking-widest text-white">MEC WORKS</span>
+                </div>
+                <p class="text-gray-500 text-sm">Multi Engineering Craft & Creative Hub</p>
+            </div>
+            <div>
+                <h5 class="font-bold text-gold mb-4">Quick Links</h5>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="/#home" class="text-gray-400 hover:text-gold">Home</a></li>
+                    <li><a href="/#about" class="text-gray-400 hover:text-gold">About</a></li>
+                    <li><a href="/#services" class="text-gray-400 hover:text-gold">Crafts</a></li>
+                    <li><a href="/#non-engineering" class="text-gray-400 hover:text-gold">Non-ENG</a></li>
+                    <li><a href="/#news" class="text-gray-400 hover:text-gold">News</a></li>
+                    <li><a href="/#contact" class="text-gray-400 hover:text-gold">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold text-gold mb-4">Legal</h5>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="text-gray-400 hover:text-gold">Terms of Service</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-gold">Privacy Policy</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-gold">Cookie Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-bold text-gold mb-4">Follow Us</h5>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-gold"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879v-6.99h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.99C18.343 21.128 22 16.991 22 12z"/></svg></a>
+                    <a href="#" class="text-gray-400 hover:text-gold"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465.69.267 1.302.637 1.868 1.156.586.519 1.043 1.152 1.394 1.865.311.663.512 1.357.581 2.19.042.873.06 1.252.06 3.291v.306c0 2.04-.018 2.418-.06 3.291-.07.833-.27 1.527-.58 2.19-.35.713-.808 1.346-1.394 1.865-.566.52-1.179.89-1.868 1.156-.636.247-1.363.416-2.427.465-1.024.047-1.379.06-3.808.06-2.43 0-2.784-.013-3.808-.06-1.064-.049-1.791-.218-2.427-.465a5.226 5.226 0 0 1-1.868-1.156 5.413 5.413 0 0 1-1.394-1.865c-.311-.663-.512-1.357-.581-2.19-.042-.873-.06-1.252-.06-3.291v-.306c0-2.04.018-2.418.06-3.291.07-.833.27-1.527.58-2.19.35-.713.808-1.346 1.394-1.865.566-.52 1.179-.89 1.868-1.156.636-.247 1.363-.416 2.427-.465 1.024-.047 1.379-.06 3.808-.06zM12 6.865a5.135 5.135 0 1 0 0 10.27 5.135 5.135 0 0 0 0-10.27zm0 1.73a3.405 3.405 0 1 1 0 6.81 3.405 3.405 0 0 1 0-6.81zm5.338-3.63a1.2 1.2 0 1 0 2.4 0 1.2 1.2 0 0 0-2.4 0z"/></svg></a>
+                    <a href="#" class="text-gray-400 hover:text-gold"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0 0 22 5.92a8.19 8.19 0 0 1-2.357.646 4.118 4.118 0 0 0 1.804-2.27 8.224 8.224 0 0 1-2.605.996 4.107 4.107 0 0 0-6.993 3.743 11.65 11.65 0 0 1-8.457-4.287 4.106 4.106 0 0 0 1.27 5.477A4.072 4.072 0 0 1 2.8 9.713v.052a4.105 4.105 0 0 0 3.292 4.022 4.095 4.095 0 0 1-1.853.07 4.108 4.108 0 0 0 3.834 2.85A8.233 8.233 0 0 1 2 18.407a11.616 11.616 0 0 0 6.29 1.84"/></svg></a>
+                </div>
+                <p class="text-gray-500 text-sm mt-4">© 2026 MEC WORKS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple contact form submission (same as main page)
+        const contactForm = document.getElementById('contactForm');
+        const successDiv = document.getElementById('formSuccess');
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(contactForm);
+            const res = await fetch('/api/contact', { method: 'POST', body: formData });
+            const data = await res.json();
+            if (data.status === 'success') {
+                contactForm.reset();
+                successDiv.classList.remove('hidden');
+                setTimeout(() => successDiv.classList.add('hidden'), 5000);
+            } else {
+                alert('Error sending message. Please try again.');
+            }
+        });
+
+        // Navbar scroll effect
+        const nav = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-2xl', 'py-4');
+                nav.classList.remove('py-6');
+            } else {
+                nav.classList.remove('shadow-2xl', 'py-4');
+                nav.classList.add('py-6');
+            }
+        });
+    </script>
+</body>
+</html>

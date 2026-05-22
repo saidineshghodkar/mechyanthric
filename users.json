@@ -1,0 +1,236 @@
+[
+  {
+    "email": "master@mechyanthrics.com",
+    "username": "master",
+    "role": "master",
+    "approved": true,
+    "full_name": "System Master",
+    "title": "Platform Controller",
+    "department": "Executive",
+    "phone": "+91 90000 10001",
+    "location": "Bengaluru",
+    "bio": "Owns the entire operating system, approvals, visual settings, and control center.",
+    "skills": [
+      "Operations strategy",
+      "Platform governance",
+      "Delivery oversight"
+    ],
+    "experience": "Enterprise control systems and multi-team execution leadership.",
+    "portfolio": "Master portal oversight and brand operations.",
+    "availability": "Always available",
+    "socials": {
+      "linkedin": "#",
+      "website": "#"
+    },
+    "password_hash": "scrypt:32768:8:1$vHiHpCkjreJWXBfH$76e896b9e037c6ac86b9ecdd1f58999816c64d8106c7b99302e15945c16bebf71fb07639046919de743e828c8a959a43015da481bff78d4e94ac3a42bcfafd6d",
+    "created_at": "2026-05-22 17:03:43"
+  },
+  {
+    "email": "mechanical.head@mechyanthrics.com",
+    "username": "mechanical.head",
+    "role": "domain",
+    "approved": true,
+    "full_name": "Arjun Dev",
+    "title": "Domain Head, Mechanical",
+    "department": "Mechanical",
+    "phone": "+91 90000 10002",
+    "location": "Bengaluru",
+    "bio": "Leads product mechanics, hardware execution, and fabrication-aligned delivery.",
+    "skills": [
+      "CAD/CAM",
+      "Simulation",
+      "Prototype strategy"
+    ],
+    "experience": "8 years in mechanical product design and prototyping.",
+    "portfolio": "Mobility systems, tooling, and structural hardware programs.",
+    "availability": "Department-only access",
+    "socials": {
+      "linkedin": "#",
+      "website": "#"
+    },
+    "password_hash": "scrypt:32768:8:1$6CSDWmm7eU9d5rnJ$9ce280898978cae8f2ca24652404b465d546837bdcd106bad7c6f07ec9d38b3c396b9d051ab23b0e3c1d9a891e56ebccf6ffb5fea276790087eff8afea7e9c5d",
+    "created_at": "2026-05-22 17:03:43"
+  },
+  {
+    "email": "software.head@mechyanthrics.com",
+    "username": "software.head",
+    "role": "domain",
+    "approved": true,
+    "full_name": "Nisha Rao",
+    "title": "Domain Head, AI & Software",
+    "department": "AI & Software",
+    "phone": "+91 90000 10003",
+    "location": "Hyderabad",
+    "bio": "Leads AI systems, dashboards, automation, and platform delivery.",
+    "skills": [
+      "System architecture",
+      "AI workflows",
+      "Data products"
+    ],
+    "experience": "9 years in platform engineering and automation systems.",
+    "portfolio": "Ops platforms, internal tools, and AI-enabled products.",
+    "availability": "Department-only access",
+    "socials": {
+      "linkedin": "#",
+      "website": "#"
+    },
+    "password_hash": "scrypt:32768:8:1$ILdxzZTq01Yql7hd$94dacfc52338c9e16b5df84a73061e1235dda625e7c7f5c12734d3454dc3128c72cf3f1c2945ce60b74c12889c40cc4c115efe0f4382a298e1502a0e4d5d88b9",
+    "created_at": "2026-05-22 17:03:44"
+  },
+  {
+    "email": "electronics.head@mechyanthrics.com",
+    "username": "electronics.head",
+    "role": "domain",
+    "approved": true,
+    "full_name": "Dharani K",
+    "title": "Domain Head, Electronics",
+    "department": "Electronics",
+    "phone": "+91 90000 10004",
+    "location": "Chennai",
+    "bio": "Leads embedded systems, sensor products, and telemetry operations.",
+    "skills": [
+      "Embedded systems",
+      "IoT",
+      "Validation"
+    ],
+    "experience": "7 years in device systems and electronics validation.",
+    "portfolio": "Telemetry stacks, devices, and controller systems.",
+    "availability": "Department-only access",
+    "socials": {
+      "linkedin": "#",
+      "website": "#"
+    },
+    "password_hash": "scrypt:32768:8:1$JyzbfvCfUEOAlfnd$a4ff2a9e44a0671a6e3f7ccfe6adbdba326b95bc7fdd154426a96d943e550ee759a6459f97b5e29b83ea24689514c3611c049d57d595e5e354d02cd3ea4dbd56",
+    "created_at": "2026-05-22 17:03:44"
+  },
+  {
+    "email": "robotics.head@mechyanthrics.com",
+    "username": "robotics.head",
+    "role": "domain",
+    "approved": true,
+    "full_name": "Farhan Ali",
+    "title": "Domain Head, Robotics",
+    "department": "Robotics",
+    "phone": "+91 90000 10005",
+    "location": "Pune",
+    "bio": "Runs automation, control logic, and field robotics execution.",
+    "skills": [
+      "Automation",
+      "Control loops",
+      "Field integration"
+    ],
+    "experience": "8 years across motion systems and robotics.",
+    "portfolio": "Automation cells, motion testing, and deployment.",
+    "availability": "Department-only access",
+    "socials": {
+      "linkedin": "#",
+      "website": "#"
+    },
+    "password_hash": "scrypt:32768:8:1$StrPId529YgbF03J$a7b208b15659b386b0392000dd026d25df7adfd6c1d0eca2d1c2c9da434c2f194b3099004a51c687e377a537a9d67f9e20bdfee2fad15edef7fe27a6644e7a0f",
+    "created_at": "2026-05-22 17:03:44"
+  },
+  {
+    "email": "interiors.head@mechyanthrics.com",
+    "username": "interiors.head",
+    "role": "domain",
+    "approved": true,
+    "full_name": "Aishwarya J",
+    "title": "Domain Head, Interior Design",
+    "department": "Interior Design",
+    "phone": "+91 90000 10006",
+    "location": "Bengaluru",
+    "bio": "Owns premium renovation, interior planning, and execution sequencing.",
+    "skills": [
+      "Spatial design",
+      "Execution planning",
+      "Material systems"
+    ],
+    "experience": "6 years in interiors and renovation delivery.",
+    "portfolio": "Residential, retail, and workspace transformations.",
+    "availability": "Department-only access",
+    "socials": {
+      "linkedin": "#",
+      "website": "#"
+    },
+    "password_hash": "scrypt:32768:8:1$VfLyFvJIlIhWwRSG$dcd7204bd9406199a1516511209fec53d6fad6df3e55fb221edfdae744c9e3476665ad39d64e1cb6585bf334b4922bc20a5ab0e9bca54567a6efcfe46ee7aab8",
+    "created_at": "2026-05-22 17:03:44"
+  },
+  {
+    "email": "ca.head@mechyanthrics.com",
+    "username": "ca.head",
+    "role": "domain",
+    "approved": true,
+    "full_name": "Karthik Iyer",
+    "title": "Domain Head, CA Services",
+    "department": "CA Services",
+    "phone": "+91 90000 10007",
+    "location": "Chennai",
+    "bio": "Oversees compliance, finance operations, and business advisory.",
+    "skills": [
+      "Compliance",
+      "Financial systems",
+      "Advisory"
+    ],
+    "experience": "10 years in business finance and compliance advisory.",
+    "portfolio": "SME finance operations and compliance programs.",
+    "availability": "Department-only access",
+    "socials": {
+      "linkedin": "#",
+      "website": "#"
+    },
+    "password_hash": "scrypt:32768:8:1$8lXxhy67TmNzxY7m$208547b71cd0e45573ada5f9caab26f901e2d0645afaeca8e2c038305cc6a456bee6c2e6633a3f5fd00b3d8b68f1809621b33395bf1aa9cdbde8e8bbbc80c2e0",
+    "created_at": "2026-05-22 17:03:44"
+  },
+  {
+    "email": "media.head@mechyanthrics.com",
+    "username": "media.head",
+    "role": "domain",
+    "approved": true,
+    "full_name": "Neel Roy",
+    "title": "Domain Head, Animation & Media",
+    "department": "Animation & Media",
+    "phone": "+91 90000 10008",
+    "location": "Mumbai",
+    "bio": "Directs animation tooling, launch media, and AI-assisted production systems.",
+    "skills": [
+      "Motion systems",
+      "Creative ops",
+      "Launch content"
+    ],
+    "experience": "7 years in animation production and digital content systems.",
+    "portfolio": "Motion identity, product launch media, and AI content workflows.",
+    "availability": "Department-only access",
+    "socials": {
+      "linkedin": "#",
+      "website": "#"
+    },
+    "password_hash": "scrypt:32768:8:1$sloy74racFjVSNnB$90c54d203258372223bf93d838b00ea7d066410a3fb85c07d368c0d4203d5ce9cc59e3ffc3c30c28b1533d797e974ce7bd44d7aa172fdd12ba4338ba263c5666",
+    "created_at": "2026-05-22 17:03:45"
+  },
+  {
+    "email": "freelancer@mechyanthrics.com",
+    "username": "freelancer.demo",
+    "role": "freelancer",
+    "approved": true,
+    "full_name": "Riya Sharma",
+    "title": "Freelance Product Visualizer",
+    "department": "Freelancer Network",
+    "phone": "+91 90000 10009",
+    "location": "Remote",
+    "bio": "Helps build product visuals, concept decks, and launch-ready presentation assets.",
+    "skills": [
+      "Presentation design",
+      "Motion visuals",
+      "Creative systems"
+    ],
+    "experience": "5 years building launch assets for technical products.",
+    "portfolio": "Portfolio available on request.",
+    "availability": "20 hrs/week",
+    "socials": {
+      "linkedin": "#",
+      "website": "#"
+    },
+    "password_hash": "scrypt:32768:8:1$D2uzTkDH35vqN5Uh$147c8cea10c056291a6c6b05f3fdb75de99f3422a082dee703c4b1ee7f3e49d700140d0f6bad18c508537083e6bbe037be8e844e709ef60f2d3696e210707a5f",
+    "created_at": "2026-05-22 17:03:45"
+  }
+]

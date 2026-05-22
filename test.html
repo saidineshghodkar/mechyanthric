@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEC WORKS · Multi Engineering Craft · labours adda</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root { --gold: #C8993E; --dark: #0A0A0A; --glass: rgba(255, 255, 255, 0.03); }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--dark); color: #E2E8F0; overflow-x: hidden; }
+        .text-gold { color: var(--gold); } .bg-gold { background-color: var(--gold); } .border-gold { border-color: var(--gold); }
+        .glass { background: var(--glass); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .hero-gradient { background: linear-gradient(135deg, #FFFFFF 0%, var(--gold) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .animate-rotate { animation: rotate 20s linear infinite; }
+        .carousel { transition: transform 0.5s ease; }
+        .carousel-item { flex: 0 0 100%; }
+        @media (min-width: 768px) { .carousel-item { flex: 0 0 33.333%; } }
+        .service-card:hover { transform: translateY(-10px); border-color: var(--gold); box-shadow: 0 10px 30px -10px rgba(200, 153, 62, 0.3); }
+        .hover-svg svg { transition: transform 0.4s ease; }
+        .service-card:hover .hover-svg svg { transform: rotate(30deg) scale(1.1); fill: var(--gold); stroke: var(--gold); }
+        .floating-shape { animation: float 6s ease-in-out infinite; }
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0px); } }
+        .fade-up { animation: fadeUp 0.8s ease-out; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .social-icon { transition: all 0.2s; }
+        .social-icon:hover { transform: scale(1.2); filter: brightness(1.2); }
+        .fab-chat {
+            position: fixed; bottom: 30px; right: 30px; background-color: var(--gold); color: black;
+            width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); z-index: 100; transition: transform 0.3s; cursor: pointer;
+        }
+        .fab-chat:hover { transform: scale(1.1); background-color: white; }
+        .chat-popup {
+            position: fixed; bottom: 100px; right: 30px; width: 320px; background: #111; border: 1px solid #333;
+            border-radius: 24px; z-index: 101; box-shadow: 0 20px 40px rgba(0,0,0,0.6); display: none;
+        }
+        .chat-popup.show { display: block; }
+        /* Style for service card links */
+        .service-card-link {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            height: 100%;
+        }
+        .service-card-link:hover {
+            color: inherit;
+        }
+    </style>
+</head>
+<body class="bg-[#0A0A0A]">
+
+<!-- Navigation -->
+<nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-6">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <a href="index.html" class="flex items-center space-x-3">
+            <div class="w-10 h-10 bg-gold rounded flex items-center justify-center shadow-[0_0_15px_rgba(200,153,62,0.4)]">
+                <svg class="w-6 h-6 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                </svg>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-xl font-extrabold tracking-tighter text-white">MEC<span class="text-gold">WORKS</span></span>
+                <span class="text-[0.6rem] uppercase tracking-[0.3em] text-gray-500 font-bold">Multi Engineering</span>
+            </div>
+        </a>
+        <div class="hidden md:flex space-x-10">
+            <a href="#home" class="text-xs uppercase tracking-widest font-bold hover:text-gold">Home</a>
+            <a href="#about" class="text-xs uppercase tracking-widest font-bold hover:text-gold">About</a>
+            <a href="#services" class="text-xs uppercase tracking-widest font-bold hover:text-gold">Crafts</a>
+            <a href="#non-engineering" class="text-xs uppercase tracking-widest font-bold hover:text-gold">Non-ENG</a>
+            <a href="#news" class="text-xs uppercase tracking-widest font-bold hover:text-gold">News</a>
+            <a href="#contact" class="text-xs uppercase tracking-widest font-bold hover:text-gold">Contact</a>
+        </div>
+        <div class="flex items-center space-x-4">
+            <a href="register-client.html" class="border border-gold text-gold px-4 py-2 rounded-full text-xs font-bold uppercase hover:bg-gold hover:text-black">Client</a>
+            <a href="register-freelancer.html" class="bg-gold text-black px-4 py-2 rounded-full text-xs font-bold uppercase hover:bg-white">Freelancer</a>
+            <a href="admin.html" class="text-gray-400 hover:text-gold text-sm">Admin</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section id="home" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+    <div class="absolute inset-0 opacity-10 pointer-events-none">
+        <div class="absolute top-20 left-20 animate-rotate">
+            <svg width="200" height="200" viewBox="0 0 100 100" fill="white"><circle cx="50" cy="50" r="40" stroke="white" stroke-width="2" fill="none"/><circle cx="50" cy="50" r="10" fill="white"/><line x1="50" y1="10" x2="50" y2="30" stroke="white" stroke-width="2"/><line x1="50" y1="70" x2="50" y2="90" stroke="white"/><line x1="10" y1="50" x2="30" y2="50" stroke="white"/><line x1="70" y1="50" x2="90" y2="50" stroke="white"/></svg>
+        </div>
+        <div class="absolute bottom-20 right-20 animate-rotate" style="animation-duration: 30s;">
+            <svg width="200" height="200" viewBox="0 0 100 100" fill="white"><circle cx="50" cy="50" r="40" stroke="white" stroke-width="2" fill="none"/><circle cx="50" cy="50" r="10" fill="white"/><line x1="50" y1="10" x2="50" y2="30" stroke="white" stroke-width="2"/><line x1="50" y1="70" x2="50" y2="90" stroke="white"/><line x1="10" y1="50" x2="30" y2="50" stroke="white"/><line x1="70" y1="50" x2="90" y2="50" stroke="white"/></svg>
+        </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10 fade-up">
+        <div class="max-w-3xl">
+            <span class="text-gold text-sm font-bold uppercase tracking-[0.3em]">Engineering · Creativity · Labour</span>
+            <h1 id="hero-title" class="text-5xl md:text-7xl font-black mt-6 leading-[1.1]">Build with Precision, Craft with Passion</h1>
+            <p id="hero-subtitle" class="text-xl text-gray-400 mt-6 max-w-xl">Multi-Engineering & Creative Freelance Hub — Hire top talent or find work.</p>
+            <div class="flex gap-4 mt-10">
+                <a href="#services" class="bg-gold text-black px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest">Explore Crafts</a>
+                <a href="#contact" class="border border-gold text-gold px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-gold hover:text-black">Hire Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-32 bg-[#0d0d0d]">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="fade-up">
+                <h2 class="text-gold text-sm font-bold uppercase tracking-[0.4em] mb-4 ">Our Story</h2>
+                <h3 class="text-4xl md:text-5xl font-black mb-8">Where <span class="text-gray-500">engineering</span> meets creativity</h3>
+                <p id="about-text" class="text-gray-400 text-lg leading-relaxed">MEC WORKS connects top engineering and creative freelancers with clients. We vet every professional to ensure quality and timely delivery. From code to construction, we've got you covered. Our platform simplifies hiring and project management for both parties.</p>
+            </div>
+            <div class="glass p-4 rounded-3xl fade-up" style="animation-delay:0.2s">
+                <img src="images/logo.jpeg" alt="About us" class="rounded-2xl w-full h-auto">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services / Crafts (Engineering) -->
+<section id="services" class="py-32 bg-[#0d0d0d]">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20">
+            <h2 class="text-gold text-sm font-bold uppercase tracking-[0.4em] mb-4">The Four Pillars</h2>
+            <h3 class="text-4xl md:text-5xl font-black">Our Multi-Engineering <span class="text-gray-500">Crafts.</span></h3>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- CSE (IT & Software) -> it.html -->
+            <a href="it.html" class="service-card-link">
+                <div class="service-card glass p-8 rounded-3xl group fade-up">
+                    <div class="hover-svg w-14 h-14 bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center mb-8 floating-shape">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-4">IT & Software</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">AI, Web, cloud, cyber security.</p>
+                    <ul class="text-xs text-gray-400 space-y-2"><li>• AI & ML</li><li>• Full-stack</li><li>• Cybersecurity</li></ul>
+                </div>
+            </a>
+            <!-- ECE (Electronics) -> electronics.html -->
+            <a href="electronics.html" class="service-card-link">
+                <div class="service-card glass p-8 rounded-3xl group fade-up" style="animation-delay:0.1s">
+                    <div class="hover-svg w-14 h-14 bg-purple-500/10 text-purple-400 rounded-2xl flex items-center justify-center mb-8 floating-shape" style="animation-delay:0.5s">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/></svg>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-4">Electronics</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">IoT, embedded, PCB, signal.</p>
+                    <ul class="text-xs text-gray-400"><li>• Embedded</li><li>• IoT</li><li>• VLSI</li></ul>
+                </div>
+            </a>
+            <!-- MECH (Mechanical & Robotics) -> machanical.html -->
+            <a href="machanical.html" class="service-card-link">
+                <div class="service-card glass p-8 rounded-3xl group fade-up" style="animation-delay:0.2s">
+                    <div class="hover-svg w-14 h-14 bg-orange-500/10 text-orange-400 rounded-2xl flex items-center justify-center mb-8 floating-shape" style="animation-delay:1s">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-4">Mechanical & Robotics</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">CAD, automation, prototyping.</p>
+                    <ul class="text-xs text-gray-400"><li>• CAD/CAM</li><li>• Robotics</li><li>• 3D printing</li></ul>
+                </div>
+            </a>
+            <!-- CIVIL (Construction & Interiors) -> construction.html -->
+            <a href="construction.html" class="service-card-link">
+                <div class="service-card glass p-8 rounded-3xl group fade-up" style="animation-delay:0.3s">
+                    <div class="hover-svg w-14 h-14 bg-green-500/10 text-green-400 rounded-2xl flex items-center justify-center mb-8 floating-shape" style="animation-delay:1.5s">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/></svg>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-4">Construction & Interiors</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">Smart architecture, project mgmt.</p>
+                    <ul class="text-xs text-gray-400"><li>• BIM</li><li>• Structural</li><li>• Interior</li></ul>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Non-Engineering Crafts -->
+<section id="non-engineering" class="py-32 bg-black/50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-20">
+            <h2 class="text-gold text-sm font-bold uppercase tracking-[0.4em] mb-4">CREATIVE HUB</h2>
+            <h3 class="text-4xl md:text-5xl font-black">Non‑Engineering <span class="text-gray-500">Crafts.</span></h3>
+            <p class="text-gray-400 mt-4">Art, media & digital experiences</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- PROMOTIONS AND DIGITAL MARKETING -> digital_marketing.html -->
+            <a href="digital_marketing.html" class="service-card-link">
+                <div class="service-card glass p-6 rounded-3xl group fade-up">
+                    <div class="hover-svg w-12 h-12 bg-pink-500/10 text-pink-400 rounded-2xl flex items-center justify-center mb-4 floating-shape">
+                        <svg width="24" height="24" fill="none" stroke="currentColor"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+                    </div>
+                    <h4 class="text-xl font-bold">Promotions & Digital Marketing</h4>
+                    <p class="text-xs text-gray-400 mt-2">Strategic social media campaigns to boost brand visibility.</p>
+                    <ul class="text-xs text-gray-400 mt-4 space-y-1"><li>• Instagram Marketing</li><li>• Facebook Advertising</li><li>• TikTok Content Creation</li></ul>
+                </div>
+            </a>
+            <!-- CONTENT CREATIONS -> content.html -->
+            <a href="content.html" class="service-card-link">
+                <div class="service-card glass p-6 rounded-3xl group fade-up" style="animation-delay:0.1s">
+                    <div class="hover-svg w-12 h-12 bg-yellow-500/10 text-yellow-400 rounded-2xl flex items-center justify-center mb-4 floating-shape" style="animation-delay:0.2s">
+                        <svg width="24" height="24" fill="none" stroke="currentColor"><path d="M12 5v14M5 12h14"/></svg>
+                    </div>
+                    <h4 class="text-xl font-bold">Content Creations</h4>
+                    <p class="text-xs text-gray-400 mt-2">Professional content creation for digital media.</p>
+                    <ul class="text-xs text-gray-400 mt-4 space-y-1"><li>• Video Editing</li><li>• Graphic Design</li><li>• Copywriting</li></ul>
+                </div>
+            </a>
+            <!-- PHOTOGRAPHY & VIDEO EDITING -> photography.html -->
+            <a href="photography.html" class="service-card-link">
+                <div class="service-card glass p-6 rounded-3xl group fade-up" style="animation-delay:0.2s">
+                    <div class="hover-svg w-12 h-12 bg-blue-500/10 text-blue-400 rounded-2xl flex items-center justify-center mb-4 floating-shape" style="animation-delay:0.4s">
+                        <svg width="24" height="24" fill="none" stroke="currentColor"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                    </div>
+                    <h4 class="text-xl font-bold">Photography & Video Editing</h4>
+                    <p class="text-xs text-gray-400 mt-2">Professional photography and video editing.</p>
+                    <ul class="text-xs text-gray-400 mt-4 space-y-1"><li>• Video Editing</li><li>• Graphic Design</li><li>• Copywriting</li></ul>
+                </div>
+            </a>
+            <!-- THUMANIAL CREATIONS (likely Thumbnail) -> tumbnail.html -->
+            <a href="tumbnail.html" class="service-card-link">
+                <div class="service-card glass p-6 rounded-3xl group fade-up" style="animation-delay:0.3s">
+                    <div class="hover-svg w-12 h-12 bg-purple-500/10 text-purple-400 rounded-2xl flex items-center justify-center mb-4 floating-shape" style="animation-delay:0.6s">
+                        <svg width="24" height="24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    </div>
+                    <h4 class="text-xl font-bold">Thumanial Creations</h4>
+                    <p class="text-xs text-gray-400 mt-2">Human‑centered design for unique experiences.</p>
+                    <ul class="text-xs text-gray-400 mt-4 space-y-1"><li>• UI/UX Design</li><li>• Brand Identity</li><li>• User Research</li></ul>
+                </div>
+            </a>
+            <!-- ART WORKS -> artworks.html -->
+            <a href="artworks.html" class="service-card-link">
+                <div class="service-card glass p-6 rounded-3xl group fade-up" style="animation-delay:0.4s">
+                    <div class="hover-svg w-12 h-12 bg-red-500/10 text-red-400 rounded-2xl flex items-center justify-center mb-4 floating-shape" style="animation-delay:0.8s">
+                        <svg width="24" height="24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M2 12h20"/></svg>
+                    </div>
+                    <h4 class="text-xl font-bold">Art Works</h4>
+                    <p class="text-xs text-gray-400 mt-2">Creative and artistic services.</p>
+                    <ul class="text-xs text-gray-400 mt-4 space-y-1"><li>• Digital Art</li><li>• Illustration</li><li>• Graphic Design</li></ul>
+                </div>
+            </a>
+            <!-- LOGO DESIGN -> logo.html -->
+            <a href="logo.html" class="service-card-link">
+                <div class="service-card glass p-6 rounded-3xl group fade-up" style="animation-delay:0.5s">
+                    <div class="hover-svg w-12 h-12 bg-indigo-500/10 text-indigo-400 rounded-2xl flex items-center justify-center mb-4 floating-shape" style="animation-delay:1s">
+                        <svg width="24" height="24" fill="none" stroke="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h4 class="text-xl font-bold">Logo Design</h4>
+                    <p class="text-xs text-gray-400 mt-2">Professional logo design for businesses.</p>
+                    <ul class="text-xs text-gray-400 mt-4 space-y-1"><li>• Brand Identity</li><li>• Logo Creation</li><li>• Visual Identity</li></ul>
+                </div>
+            </a>
+            <!-- GRAPHIC DESIGN & ANIMATIONS (not linked, as not in list) -->
+             <!-- <a href=""></a> added  this  -->
+            <div class="service-card glass p-6 rounded-3xl group fade-up" style="animation-delay:0.6s">
+                <div class="hover-svg w-12 h-12 bg-teal-500/10 text-teal-400 rounded-2xl flex items-center justify-center mb-4 floating-shape" style="animation-delay:1.2s">
+                    <svg width="24" height="24" fill="none" stroke="currentColor"><rect x="2" y="2" width="20" height="20" rx="2.18"/><path d="M7 2v20M17 2v20M2 12h20M2 7h5M2 17h5M17 17h5M17 7h5"/></svg>
+                </div>
+                <h4 class="text-xl font-bold">Graphic Design & Animations</h4>
+                <p class="text-xs text-gray-400 mt-2">Creative graphic design and animation.</p>
+                <ul class="text-xs text-gray-400 mt-4 space-y-1"><li>• Graphic Design</li><li>• Animation</li><li>• Visual Effects</li></ul>
+            </div>
+                <!-- youga and fitness -> fitness.html -->
+
+<div class="service-card glass p-6 rounded-3xl group fade-up" style="animation-delay:0.6s">
+                <div class="hover-svg w-12 h-12 bg-teal-500/10 text-teal-400 rounded-2xl flex items-center justify-center mb-4 floating-shape" style="animation-delay:1.2s">
+                    <svg width="24" height="24" fill="none" stroke="currentColor"><rect x="2" y="2" width="20" height="20" rx="2.18"/><path d="M7 2v20M17 2v20M2 12h20M2 7h5M2 17h5M17 17h5M17 7h5"/></svg>
+                </div>
+                <h4 class="text-xl font-bold">Youga & Fitness</h4>
+                <p class="text-xs text-gray-400 mt-2">Yoga and fitness training services.</p>
+                <ul class="text-xs text-gray-400 mt-4 space-y-1"><li>• Yoga Classes</li><li>• Fitness Training</li><li>• Wellness Programs</li></ul>
+            </div>
+                
+
+            <!-- labours adda promo -> laboues.html -->
+            <a href="laboues.html" class="service-card-link">
+                <div class="service-card glass p-6 rounded-3xl border-gold/30 flex flex-col items-center justify-center group fade-up" style="animation-delay:0.7s width-auto">
+                    <span class="text-gold text-3xl mb-2">🛠️</span>
+                    <h4 class="text-xl font-bold">labours adda</h4>
+                    <p class="text-xs text-center text-gray-400">Skilled labour app • coming soon</p>
+                    <div class="mt-2 text-[0.6rem] bg-gold/20 px-3 py-1 rounded-full">Android/iOS</div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Carousel -->
+<section id="news" class="py-32 bg-[#0d0d0d]">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-gold text-sm font-bold uppercase tracking-[0.4em] mb-4">WHAT'S NEW</h2>
+            <h3 class="text-4xl md:text-5xl font-black">Recent <span class="text-gray-500">News & Updates</span></h3>
+        </div>
+        <div class="relative overflow-hidden">
+            <div id="carousel" class="flex transition-transform duration-500 ease-in-out">
+                <!-- Project items (static) -->
+                <div class="carousel-item flex-shrink-0 w-full md:w-1/3 px-3">
+                    <div class="glass p-4 rounded-2xl h-full flex flex-col">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400" alt="Students Career Prediction" class="w-full h-40 object-cover rounded-xl mb-4">
+                        <h4 class="text-xl font-bold text-gold">Students Career Prediction</h4>
+                        <p class="text-gray-400 mt-2 flex-grow">AI-powered platform to guide students towards optimal career paths based on skills and interests.</p>
+                        <span class="text-xs text-gray-500 mt-4 block">15 Mar 2026</span>
+                    </div>
+                </div>
+                <div class="carousel-item flex-shrink-0 w-full md:w-1/3 px-3">
+                    <div class="glass p-4 rounded-2xl h-full flex flex-col">
+                        <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=400" alt="E-commerce Website" class="w-full h-40 object-cover rounded-xl mb-4">
+                        <h4 class="text-xl font-bold text-gold">E-commerce Website</h4>
+                        <p class="text-gray-400 mt-2 flex-grow">Full‑featured online store with secure payments and inventory management for local artisans.</p>
+                        <span class="text-xs text-gray-500 mt-4 block">10 Mar 2026</span>
+                    </div>
+                </div>
+                <div class="carousel-item flex-shrink-0 w-full md:w-1/3 px-3">
+                    <div class="glass p-4 rounded-2xl h-full flex flex-col">
+                        <img src="images/labour.webp" alt="Labour's Adda" class="w-full h-40 object-cover rounded-xl mb-4" style="width:100%; height:160px; object-fit:cover;">
+                        <h4 class="text-xl font-bold text-gold">Labour's Adda</h4>
+                        <p class="text-gray-400 mt-2 flex-grow">Mobile app connecting skilled labour with construction and industrial projects.</p>
+                        <span class="text-xs text-gray-500 mt-4 block">05 Mar 2026</span>
+                    </div>
+                </div>
+                <div class="carousel-item flex-shrink-0 w-full md:w-1/3 px-3">
+                    <div class="glass p-4 rounded-2xl h-full flex flex-col">
+                        <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=400" alt="Corporate Website" class="w-full h-40 object-cover rounded-xl mb-4">
+                        <h4 class="text-xl font-bold text-gold">Corporate Website</h4>
+                        <p class="text-gray-400 mt-2 flex-grow">Modern, responsive website for a leading engineering consultancy.</p>
+                        <span class="text-xs text-gray-500 mt-4 block">28 Feb 2026</span>
+                    </div>
+                </div>
+                <div class="carousel-item flex-shrink-0 w-full md:w-1/3 px-3">
+                    <div class="glass p-4 rounded-2xl h-full flex flex-col">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400" alt="Interior Projects" class="w-full h-40 object-cover rounded-xl mb-4">
+                        <h4 class="text-xl font-bold text-gold">Interior Projects</h4>
+                        <p class="text-gray-400 mt-2 flex-grow">Complete interior design and execution for a luxury apartment complex.</p>
+                        <span class="text-xs text-gray-500 mt-4 block">20 Feb 2026</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Navigation arrows -->
+            <button id="prevBtn" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gold/80 hover:bg-gold text-black w-10 h-10 rounded-full flex items-center justify-center text-2xl z-10">❮</button>
+            <button id="nextBtn" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gold/80 hover:bg-gold text-black w-10 h-10 rounded-full flex items-center justify-center text-2xl z-10">❯</button>
+        </div>
+        <!-- Dots indicator -->
+        <div id="dots" class="flex justify-center mt-6 space-x-2">
+            <button class="dot w-3 h-3 rounded-full bg-gold" data-index="0"></button>
+            <button class="dot w-3 h-3 rounded-full bg-gray-500 hover:bg-gold transition-colors" data-index="1"></button>
+            <button class="dot w-3 h-3 rounded-full bg-gray-500 hover:bg-gold transition-colors" data-index="2"></button>
+            <button class="dot w-3 h-3 rounded-full bg-gray-500 hover:bg-gold transition-colors" data-index="3"></button>
+            <button class="dot w-3 h-3 rounded-full bg-gray-500 hover:bg-gold transition-colors" data-index="4"></button>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-32 bg-black/50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-gold text-sm font-bold uppercase tracking-[0.4em] mb-4">Get in touch</h2>
+            <h3 class="text-4xl md:text-5xl font-black">Contact <span class="text-gray-500">Us</span></h3>
+        </div>
+        <div class="grid md:grid-cols-2 gap-12">
+            <div class="glass p-8 rounded-3xl fade-up">
+                <h4 class="text-2xl font-bold mb-6">Send a message</h4>
+                <form id="contactForm">
+                    <input type="text" name="name" placeholder="Your Name" required class="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 mb-4">
+                    <input type="email" name="email" placeholder="Email Address" required class="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 mb-4">
+                    <textarea name="message" rows="4" placeholder="Your Message" required class="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 mb-4"></textarea>
+                    <button type="submit" class="bg-gold text-black font-bold py-4 px-8 rounded-xl">Send Message</button>
+                </form>
+                <div id="contactSuccess" class="hidden mt-4 text-green-500 text-sm">Message sent successfully! (Demo)</div>
+            </div>
+            <div class="space-y-6 fade-up" style="animation-delay:0.2s">
+                <div class="flex items-center space-x-4"><span class="text-gold text-xl">📧</span><span>contact@mecworks.in</span></div>
+                <div class="flex items-center space-x-4"><span class="text-gold text-xl">📞</span><span>+91 93405109</span></div>
+                <div class="flex items-center space-x-4"><span class="text-gold text-xl">📍</span><span>Dhone ,AP, India</span></div>
+                <!-- Google Maps Embed -->
+                <div class="mt-6 rounded-2xl overflow-hidden h-64">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.977289580237!2d77.594562314822!3d12.971598790844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1673e7d0672f%3A0xc62d6a7c2cfd3c6!2sBangalore%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1645432167890!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-16 border-t border-white/5 bg-[#0d0d0d]">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+            <div class="flex items-center space-x-2 mb-4">
+                <div class="w-8 h-8 bg-gold rounded flex items-center justify-center">
+                    <svg class="w-5 h-5 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                </div>
+                <span class="text-lg font-black tracking-widest text-white">MEC WORKS</span>
+            </div>
+            <p class="text-gray-500 text-sm">Multi Engineering Craft & Creative Hub</p>
+        </div>
+        <div>
+            <h5 class="font-bold text-gold mb-4">Quick Links</h5>
+            <ul class="space-y-2 text-sm">
+                <li><a href="#home" class="text-gray-400 hover:text-gold">Home</a></li>
+                <li><a href="#about" class="text-gray-400 hover:text-gold">About</a></li>
+                <li><a href="#services" class="text-gray-400 hover:text-gold">Crafts</a></li>
+                <li><a href="#non-engineering" class="text-gray-400 hover:text-gold">Non-ENG</a></li>
+                <li><a href="#news" class="text-gray-400 hover:text-gold">News</a></li>
+                <li><a href="#contact" class="text-gray-400 hover:text-gold">Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <h5 class="font-bold text-gold mb-4">Legal</h5>
+            <ul class="space-y-2 text-sm">
+                <li><a href="#" class="text-gray-400 hover:text-gold">Terms of Service</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-gold">Privacy Policy</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-gold">Cookie Policy</a></li>
+            </ul>
+        </div>
+        <div>
+            <h5 class="font-bold text-gold mb-4">Follow Us</h5>
+            <div class="flex space-x-4">
+                <a href="#" class="social-icon"><svg class="w-6 h-6 text-gray-400 hover:text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879v-6.99h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.99C18.343 21.128 22 16.991 22 12z"/></svg></a>
+                <a href="#" class="social-icon"><svg class="w-6 h-6 text-gray-400 hover:text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465.69.267 1.302.637 1.868 1.156.586.519 1.043 1.152 1.394 1.865.311.663.512 1.357.581 2.19.042.873.06 1.252.06 3.291v.306c0 2.04-.018 2.418-.06 3.291-.07.833-.27 1.527-.58 2.19-.35.713-.808 1.346-1.394 1.865-.566.52-1.179.89-1.868 1.156-.636.247-1.363.416-2.427.465-1.024.047-1.379.06-3.808.06-2.43 0-2.784-.013-3.808-.06-1.064-.049-1.791-.218-2.427-.465a5.226 5.226 0 0 1-1.868-1.156 5.413 5.413 0 0 1-1.394-1.865c-.311-.663-.512-1.357-.581-2.19-.042-.873-.06-1.252-.06-3.291v-.306c0-2.04.018-2.418.06-3.291.07-.833.27-1.527.58-2.19.35-.713.808-1.346 1.394-1.865.566-.52 1.179-.89 1.868-1.156.636-.247 1.363-.416 2.427-.465 1.024-.047 1.379-.06 3.808-.06zM12 6.865a5.135 5.135 0 1 0 0 10.27 5.135 5.135 0 0 0 0-10.27zm0 1.73a3.405 3.405 0 1 1 0 6.81 3.405 3.405 0 0 1 0-6.81zm5.338-3.63a1.2 1.2 0 1 0 2.4 0 1.2 1.2 0 0 0-2.4 0z"/></svg></a>
+                <a href="#" class="social-icon"><svg class="w-6 h-6 text-gray-400 hover:text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0 0 22 5.92a8.19 8.19 0 0 1-2.357.646 4.118 4.118 0 0 0 1.804-2.27 8.224 8.224 0 0 1-2.605.996 4.107 4.107 0 0 0-6.993 3.743 11.65 11.65 0 0 1-8.457-4.287 4.106 4.106 0 0 0 1.27 5.477A4.072 4.072 0 0 1 2.8 9.713v.052a4.105 4.105 0 0 0 3.292 4.022 4.095 4.095 0 0 1-1.853.07 4.108 4.108 0 0 0 3.834 2.85A8.233 8.233 0 0 1 2 18.407a11.616 11.616 0 0 0 6.29 1.84"/></svg></a>
+                <a href="#" class="social-icon"><svg class="w-6 h-6 text-gray-400 hover:text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM8.339 18.337H5.667v-8.59h2.672v8.59zM7.003 8.574a1.548 1.548 0 1 1 0-3.096 1.548 1.548 0 0 1 0 3.096zm11.335 9.763h-2.669V14.16c0-.996-.018-2.277-1.388-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248h-2.667v-8.59h2.56v1.174h.037c.356-.675 1.227-1.387 2.524-1.387 2.698 0 3.196 1.778 3.196 4.09v4.713z"/></svg></a>
+                <a href="#" class="social-icon"><svg class="w-6 h-6 text-gray-400 hover:text-gold" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a2.996 2.996 0 0 0-2.11-2.11C19.528 3.5 12 3.5 12 3.5s-7.528 0-9.388.576a2.996 2.996 0 0 0-2.11 2.11C0 8.048 0 12 0 12s0 3.952.502 5.814a2.996 2.996 0 0 0 2.11 2.11c1.86.576 9.388.576 9.388.576s7.528 0 9.388-.576a2.996 2.996 0 0 0 2.11-2.11C24 15.952 24 12 24 12s0-3.952-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+            </div>
+            <p class="text-gray-500 text-sm mt-4">© 2026 MEC WORKS. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Floating Chatbot FAB -->
+<div class="fab-chat" id="chatFab">
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+</div>
+<div class="chat-popup glass" id="chatPopup">
+    <div class="p-6 border-b border-white/10 flex justify-between items-center">
+        <span class="font-bold text-gold">🤖 FAQ Assistant</span>
+        <button id="closeChat" class="text-gray-400 hover:text-white">✕</button>
+    </div>
+    <div class="p-6 space-y-4 max-h-96 overflow-y-auto">
+        <div class="glass p-3 rounded-2xl text-sm">❓ How do I register as freelancer? → Click 'Freelancer' button and fill the detailed form.</div>
+        <div class="glass p-3 rounded-2xl text-sm">❓ What is labours adda? → Our app for skilled labour hiring (launching soon).</div>
+        <div class="glass p-3 rounded-2xl text-sm">❓ Client agreement process? → After matching, digital agreement is generated.</div>
+        <div class="glass p-3 rounded-2xl text-sm">❓ Non-engineering crafts? → Scroll to 'Non-ENG Crafts' section.</div>
+        <div class="text-gold text-xs mt-4">*For detailed help, contact admin</div>
+    </div>
+</div>
+
+<script>
+    // Projects Carousel
+    const carousel = document.getElementById('carousel');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const dots = document.querySelectorAll('.dot');
+    let currentIndex = 0;
+    const totalItems = 5;
+
+    function getStepPercent() {
+        return window.innerWidth < 768 ? 100 : 33.333;
+    }
+
+    function updateCarousel(index) {
+        if (index < 0) index = totalItems - 1;
+        if (index >= totalItems) index = 0;
+        const step = getStepPercent();
+        carousel.style.transform = `translateX(-${index * step}%)`;
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('bg-gold', i === index);
+            dot.classList.toggle('bg-gray-500', i !== index);
+        });
+        currentIndex = index;
+    }
+
+    prevBtn.addEventListener('click', () => updateCarousel(currentIndex - 1));
+    nextBtn.addEventListener('click', () => updateCarousel(currentIndex + 1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => updateCarousel(i)));
+
+    window.addEventListener('resize', () => updateCarousel(currentIndex));
+    setInterval(() => updateCarousel(currentIndex + 1), 5000);
+
+    // Navbar scroll effect
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            nav.classList.add('glass', 'shadow-2xl', 'py-4');
+            nav.classList.remove('py-6');
+        } else {
+            nav.classList.remove('glass', 'shadow-2xl', 'py-4');
+            nav.classList.add('py-6');
+        }
+    });
+
+    // Chatbot FAB
+    const chatFab = document.getElementById('chatFab');
+    const chatPopup = document.getElementById('chatPopup');
+    const closeChat = document.getElementById('closeChat');
+    chatFab.onclick = () => chatPopup.classList.toggle('show');
+    closeChat.onclick = () => chatPopup.classList.remove('show');
+
+    // Contact form (static demo)
+    const contactForm = document.getElementById('contactForm');
+    const contactSuccess = document.getElementById('contactSuccess');
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        contactSuccess.classList.remove('hidden');
+        setTimeout(() => contactSuccess.classList.add('hidden'), 5000);
+    });
+</script>
+</body>
+</html>
